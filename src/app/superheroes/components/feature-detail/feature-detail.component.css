@@ -1,0 +1,13 @@
+.nested-feature-title{
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.nested-feature{
+    margin: 10px;
+    padding: 15px;
+    background: #d8d8d8;
+    border-radius: 10px;
+}

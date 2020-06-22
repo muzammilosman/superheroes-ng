@@ -1,0 +1,23 @@
+.listing-area{
+    margin-top: 15px;
+}
+
+.card{
+    margin-bottom: 10px;
+    height: 420px;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 45%;
+}
+
+.card-text{
+    font-size: 12px;
+    height: 58%;
+    overflow-y: hidden;
+}
+
+.options{
+    padding: 10px 10px 10px 10px;
+}

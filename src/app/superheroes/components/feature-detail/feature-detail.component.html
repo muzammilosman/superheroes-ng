@@ -1,0 +1,15 @@
+<div class="nested-feature">
+    <div class="nested-feature-title" (click)="expandCollapse()">
+      <div class="row">
+          <a class="feature-expand" *ngIf="!expandFeature">+</a>
+          <a class="feature-expand" *ngIf="expandFeature">-</a>
+          {{featureTitle}}
+        </div>
+    </div>
+    <div class="nested-feature-detail" *ngIf="expandFeature">
+      <ul *ngIf="featureTitle != 'Description'" class="list-group">
+          <li class="list-group-item" *ngFor="let item of featureDetails">{{item.name}}</li>
+      </ul>
+      <div *ngIf="featureTitle == 'Description'" [innerHtml]="featureDetails"></div>
+    </div>
+</div>

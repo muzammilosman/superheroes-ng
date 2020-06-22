@@ -1,0 +1,35 @@
+.real-name{
+    color: grey;
+    text-align: center;
+}
+
+.hero-name{
+    text-align: center;
+}
+
+.feature{
+    margin: 10px;
+    padding: 10px;
+}
+
+.feature-title{
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.detail-image{
+    width: 65%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.feature-detail{
+    font-size: 14px;
+}
+
+.hero-details-card{
+    position: relative;
+    margin: auto;
+    margin-top: 44px;
+}

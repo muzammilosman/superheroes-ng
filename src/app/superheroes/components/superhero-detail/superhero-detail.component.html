@@ -1,0 +1,41 @@
+<div class="col-md-10 col-xs-11 col-sm-11 hero-details-card">
+  <div class="card" *ngIf="heroFetched">
+    <img class="detail-image" src="{{superHeroDetail.image.medium_url}}" />
+    <div class="card-title hero-name">
+      <div class="col-md-12">
+        <h2>{{superHeroDetail.name}}</h2>
+      </div>
+      <div class="col-md-12 real-name">
+        <h5>{{superHeroDetail.real_name}}</h5>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="feature">
+        <div class="feature-title">Aliases</div>
+        <div class="feature-detail">{{superHeroDetail.aliases}}</div>
+      </div>
+
+      <div class="feature gender">
+        <div class="feature-title">Gender</div>
+        <div *ngIf="superHeroDetail.gender == 1">M</div>
+        <div *ngIf="superHeroDetail.gender == 2">F</div>
+        <div *ngIf="superHeroDetail.gender != 1 && superHeroDetail.gender != 2">Other</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title">Publisher</div>
+        <div class="feature-detail">{{superHeroDetail.publisher.name}}</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title">Origin</div>
+        <div class="feature-detail">{{superHeroDetail.origin.name}}</div>
+      </div>
+      <app-feature-detail [featureTitle]="'Description'" [featureDetails]="superHeroDetail.description"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Powers'" [featureDetails]="superHeroDetail.powers"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Creators'" [featureDetails]="superHeroDetail.creators"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Friends'" [featureDetails]="superHeroDetail.character_friends"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Enemies'" [featureDetails]="superHeroDetail.character_enemies"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Teams'" [featureDetails]="superHeroDetail.character_friends"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Team Friends'" [featureDetails]="superHeroDetail.team_friends"></app-feature-detail>
+      <app-feature-detail [featureTitle]="'Team Enemies'" [featureDetails]="superHeroDetail.team_enemies"></app-feature-detail>
+    </div>
+</div>

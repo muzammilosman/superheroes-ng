@@ -1,0 +1,51 @@
+<div class="options row">
+  <div class="col-md-6">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item" [ngClass]="{disabled: pages[0] == 1}">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item" [ngClass]="{active: offset/100 == item}" *ngFor="let item of pages"><a class="page-link" href="#" (click)="adjustOffset(item-1)">{{item}}</a></li>
+        <li class="page-item">
+          <a class="page-link" (click)="nextPages()">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-6">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="searchKey" placeholder="Search heroes">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="searchSuperHeroes()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="listing-area col-md-12">
+  <div class="row card-elements">
+    <div class="col-md-4" *ngFor="let hero of superheroes">
+          <div class="card"  [routerLink]="['/hero-detail']" [queryParams]="{detail: hero.api_detail_url}">
+            <img class="card-img-top" src="{{hero.image.medium_url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{hero.name}}</h5>
+              <div class="real-name">{{hero.real_name}}</div>
+              <p class="card-text">{{hero.deck}}</p>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="col-md-6">
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{disabled: pages[0] == 1}">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item" [ngClass]="{active: offset/100 == item}" *ngFor="let item of pages"><a class="page-link" href="#" (click)="adjustOffset(item-1)">{{item}}</a></li>
+      <li class="page-item">
+        <a class="page-link" (click)="nextPages()">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+
