@@ -1,5 +1,6 @@
 <div class="col-md-10 col-xs-11 col-sm-11 hero-details-card">
-  <div class="card" *ngIf="heroFetched">
+  <div class="loader" *ngIf="heroFetched"></div>
+  <div class="card" *ngIf="!heroFetched">
     <img class="detail-image" src="{{superHeroDetail.image.medium_url}}" />
     <div class="card-title hero-name">
       <div class="col-md-12">

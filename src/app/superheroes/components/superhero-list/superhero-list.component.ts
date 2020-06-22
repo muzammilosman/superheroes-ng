@@ -14,6 +14,7 @@ export class SuperheroListComponent implements OnInit {
   pages =  [1 , 2 , 3];
   offset = 0;
   searchKey = '';
+  heroesLoaded: boolean;
 
   constructor(private httpService: HttpService) { }
 
@@ -41,7 +42,9 @@ export class SuperheroListComponent implements OnInit {
   }
 
   getSuperHeroes() {
+    this.heroesLoaded = true;
     this.httpService.getSuperheoes(this.offset).subscribe((res: any) => {
+      this.heroesLoaded = false;
       this.superheroes = res.results;
       this.offset = res.results.offset;
     });

@@ -21,7 +21,8 @@
     </div>
   </div>
 </div>
-<div class="listing-area col-md-12">
+<div class="loader" *ngIf="heroesLoaded"></div>
+<div class="listing-area col-md-12" *ngIf="!heroesLoaded">
   <div class="row card-elements">
     <div class="col-md-4" *ngFor="let hero of superheroes">
           <div class="card"  [routerLink]="['/hero-detail']" [queryParams]="{detail: hero.api_detail_url}">

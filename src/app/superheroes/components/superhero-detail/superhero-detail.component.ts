@@ -12,18 +12,18 @@ export class SuperheroDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
 
   superHeroDetail: any;
-  heroFetched = false;
+  heroFetched: boolean;
 
   ngOnInit() {
     this.fetchHero();
   }
 
   fetchHero() {
-    this.heroFetched = false;
+    this.heroFetched = true;
     this.route.queryParams.subscribe(params => {
       this.httpService.getSuperHeroDetails(params.detail).subscribe((res) => {
+        this.heroFetched = false;
         this.superHeroDetail = res.results;
-        this.heroFetched = true;
       });
     });
   }

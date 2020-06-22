@@ -6,6 +6,8 @@
 .app-nav{
     margin: auto;
     text-align: center;
+    cursor: pointer;
+    color: #007bff;
 }
 
 .nav-bar-comp{
